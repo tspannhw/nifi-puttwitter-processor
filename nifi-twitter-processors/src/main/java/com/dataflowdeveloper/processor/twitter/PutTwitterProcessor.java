@@ -65,15 +65,22 @@ public class PutTwitterProcessor extends AbstractProcessor {
 			.name("Access Token Secret").description("The Access Token Secret provided by Twitter").required(true)
 			.sensitive(true).addValidator(StandardValidators.NON_EMPTY_VALIDATOR).build();
 	public static final PropertyDescriptor MESSAGE = new PropertyDescriptor.Builder().name("Message")
+			.expressionLanguageSupported(true)
 			.description("Message to post to status on Twitter").required(true).sensitive(false)
 			.addValidator(StandardValidators.NON_EMPTY_VALIDATOR).build();
-	public static final PropertyDescriptor LATITUDE = new PropertyDescriptor.Builder().name("Latitude")
-			.description("Geolocation Latitude to post to status on Twitter").required(false).sensitive(false)
+	public static final PropertyDescriptor LATITUDE = new PropertyDescriptor.Builder().name("latitude")
+			.displayName("Latitude")
+			.addValidator(StandardValidators.NON_BLANK_VALIDATOR)
+			.description("Geolocation Latitude to post to status on Twitter").required(false)
+			.expressionLanguageSupported(true)
 			.build();
-	public static final PropertyDescriptor LONGITUDE = new PropertyDescriptor.Builder().name("Longitude")
-			.description("Geolocation Longitude to post to status on Twitter").required(false).sensitive(false)
+	public static final PropertyDescriptor LONGITUDE = new PropertyDescriptor.Builder().name("longitude")
+			.displayName("Longitude")
+			.expressionLanguageSupported(true)
+			.addValidator(StandardValidators.NON_BLANK_VALIDATOR)
+			.description("Geolocation Longitude to post to status on Twitter").required(false)
 			.build();
-
+	
 	public static final Relationship REL_SUCCESS = new Relationship.Builder().name("success")
 			.description("All status updates will be routed to this relationship").build();
 

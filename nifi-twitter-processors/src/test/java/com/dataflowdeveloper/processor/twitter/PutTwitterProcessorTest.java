@@ -53,11 +53,9 @@ public class PutTwitterProcessorTest {
 //			attributeMap.put("test1", "test1v");
 //			DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 //			Date date = new Date();
-
 //			testRunner.setProperty(PutTwitterProcessor.MESSAGE, "Current Time is " + dateFormat.format(date));
 //			testRunner.setProperty(PutTwitterProcessor.LATITUDE, "40.268155");
 //			testRunner.setProperty(PutTwitterProcessor.LONGITUDE, "-74.529094");
-//
 //			testRunner.enqueue(new FileInputStream(new File("src/test/resources/kafka.jpg")),
 //			 attributeMap);
 //
