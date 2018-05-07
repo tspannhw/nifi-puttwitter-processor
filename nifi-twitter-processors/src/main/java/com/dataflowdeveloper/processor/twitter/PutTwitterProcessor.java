@@ -142,10 +142,10 @@ public class PutTwitterProcessor extends AbstractProcessor {
 			final String consumerSecret = context.getProperty(CONSUMER_SECRET).getValue();
 			final String accessToken = context.getProperty(ACCESS_TOKEN).getValue();
 			final String accessTokenSecret = context.getProperty(ACCESS_TOKEN_SECRET).getValue();
-			final String message = context.getProperty(MESSAGE).getValue();
-			final String latitude = context.getProperty(LATITUDE).getValue();
-			final String longitude = context.getProperty(LONGITUDE).getValue();
 
+			final String message = context.getProperty(MESSAGE).evaluateAttributeExpressions(flowFile).getValue();
+			final String latitude = context.getProperty(LATITUDE).evaluateAttributeExpressions(flowFile).getValue();
+			final String longitude = context.getProperty(LONGITUDE).evaluateAttributeExpressions(flowFile).getValue();
 
 			String reply = tweet.sendTweet(message, latitude, longitude, consumerKey, consumerSecret, accessToken,
 					accessTokenSecret);

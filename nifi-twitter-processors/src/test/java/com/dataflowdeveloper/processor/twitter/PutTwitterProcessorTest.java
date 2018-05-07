@@ -51,14 +51,19 @@ public class PutTwitterProcessorTest {
 //			final Map<String, String> attributeMap = new HashMap<>();
 //			attributeMap.put("field1", "f");
 //			attributeMap.put("test1", "test1v");
+//			attributeMap.put("city", "Hightstown");
+//			attributeMap.put("location", "Earth");
+//			attributeMap.put("parameter", "so2");
+//			attributeMap.put("value", "25");
+//			attributeMap.put("unit", "pm/ms");
+//			
 //			DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 //			Date date = new Date();
-//			testRunner.setProperty(PutTwitterProcessor.MESSAGE, "Current Time is " + dateFormat.format(date));
+//			testRunner.setProperty(PutTwitterProcessor.MESSAGE, "${'city':append( ' '):append( ${'location'} ):append(' '):append( ${'parameter'} ):append(' ' ):append(${'value'}):append(' '):append(${'unit'})}"); // "Current Time is " + dateFormat.format(date));
 //			testRunner.setProperty(PutTwitterProcessor.LATITUDE, "40.268155");
 //			testRunner.setProperty(PutTwitterProcessor.LONGITUDE, "-74.529094");
 //			testRunner.enqueue(new FileInputStream(new File("src/test/resources/kafka.jpg")),
 //			 attributeMap);
-//
 //			testRunner.setValidateExpressionUsage(false);
 //			testRunner.run();
 //			testRunner.assertValid();
