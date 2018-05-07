@@ -1,0 +1,3 @@
+com/dataflowdeveloper/processor/twitter/Tweet.class
+com/dataflowdeveloper/processor/twitter/PutTwitterProcessor.class
+com/dataflowdeveloper/processor/twitter/PutTwitterProcessor$1.class
