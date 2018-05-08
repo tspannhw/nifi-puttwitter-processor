@@ -19,6 +19,7 @@ public class Tweet {
 
 	
 	/**
+	 * sendTweet
 	 * 
 	 * @param message
 	 * @param latitude
@@ -32,6 +33,7 @@ public class Tweet {
 	public String sendTweet(String message, String latitude, String longitude, String consumerKey, String consumerSecret, String accessToken, String accessTokenSecret) {
 		// precondition
 		if ( message == null || consumerKey == null || consumerSecret == null || accessToken == null || accessTokenSecret == null ) {
+			System.err.println("Missing message or keys");
 			return "FAILED";
 		}
 	    Status status = null;
@@ -62,6 +64,7 @@ public class Tweet {
 			// upload media file update.setMedia(file);
 			status = twitter.updateStatus(update);			
 		} catch (TwitterException e) {
+			e.printStackTrace();
 			return "FAILED";
 		}
 
